@@ -1,0 +1,15 @@
+Script started on 2022-09-10 16:33:24-04:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="189" LINES="46"]
+]0;stevex@stevex:~/school/cisc3140/lab-1[?2004h[01;32m[stevex@stevex[01;37m lab-1[01;32m]$[00m mkdir folder
+[?2004l]0;stevex@stevex:~/school/cisc3140/lab-1[?2004h[01;32m[stevex@stevex[01;37m lab-1[01;32m]$[00m ls folder
+[?2004l]0;stevex@stevex:~/school/cisc3140/lab-1[?2004h[01;32m[stevex@stevex[01;37m lab-1[01;32m]$[00m mv file.txt folder
+[?2004l]0;stevex@stevex:~/school/cisc3140/lab-1[?2004h[01;32m[stevex@stevex[01;37m lab-1[01;32m]$[00m ls[K[Kcp folder/t[Kfile.txt folder.[K/t[Kfilecopy.txt
+[?2004l]0;stevex@stevex:~/school/cisc3140/lab-1[?2004h[01;32m[stevex@stevex[01;37m lab-1[01;32m]$[00m javac LabDueDates.java
+[?2004l]0;stevex@stevex:~/school/cisc3140/lab-1[?2004h[01;32m[stevex@stevex[01;37m lab-1[01;32m]$[00m jaa[Kva LabDueDates
+[?2004lLab 1 (09/28/2022 at 3:30PM): 17 Days 22 Hours 55 Minutes 52 Seconds Remaining
+Lab 2 (10/26/2022 at 3:30PM): 45 Days 22 Hours 55 Minutes 51 Seconds Remaining
+Lab 3 (11/23/2022 at 3:30PM): 73 Days 22 Hours 55 Minutes 51 Seconds Remaining
+Lab 4 (12/07/2022 at 3:30PM): 87 Days 22 Hours 55 Minutes 51 Seconds Remaining
+]0;stevex@stevex:~/school/cisc3140/lab-1[?2004h[01;32m[stevex@stevex[01;37m lab-1[01;32m]$[00m exit
+[?2004lexit
+
+Script done on 2022-09-10 16:34:10-04:00 [COMMAND_EXIT_CODE="0"]

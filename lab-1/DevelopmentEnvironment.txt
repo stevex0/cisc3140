@@ -1,0 +1,24 @@
+This is my development environment on my laptop.
+
+1.	Terminal app: konsole 22.04.3
+		Installation path: /usr/bin/konsole
+		Download information: https://konsole.kde.org/download.html
+		Documentation: https://docs.kde.org/stable5/en/konsole/konsole/index.html
+2. 	Git version control: git version 2.37.2
+		Installation path: /usr/bin/git
+		Download information: https://git-scm.com/downloads
+		Documentation: https://git-scm.com/doc
+3. 	NodeJS: node v18.7.0
+		Installation path: /user/bin/node
+		Download information: https://nodejs.org/en/download/
+		Documentation: https://nodejs.org/en/docs/
+	NPM: npm 8.17.0
+		Installation path: /user/bin/npm
+		Download information: ???
+		Documentation: https://docs.npmjs.com/
+4. 	Repository configurations: -
+5. 	Text editor: Visual Studio Code 1.70.2
+		Installation path: /var/lib/snapd/snap/bin/code
+		Download information: https://code.visualstudio.com/download
+		Documentation: https://code.visualstudio.com/docs
+6. 	Text editor configurations: -
