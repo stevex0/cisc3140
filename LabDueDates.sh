@@ -11,7 +11,7 @@ lab4=`date -d '2022-12-07 15:30' +%s`
 
 function print_lab() {
 	difference=$(($2 - $today))
-	format='%D at %_I:%M%p'
+	format='%m/%d/%Y at %_I:%M%p'
 	title="$1 `date -d @$2 +"($format): "`"
 	if [ $difference -lt 0 ]; then
 		message='Pass Due'
