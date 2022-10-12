@@ -1,27 +1,61 @@
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class LabDueDates {
 	public static void main(String[] args) {
-		printLab("Lab 1", 9, 28); 	// 09/02/2022
-		printLab("Lab 2", 10, 26);	// 10/26/2022
-		printLab("Lab 3", 11, 23); 	// 11/23/2022
-		printLab("Lab 4", 12, 7); 	// 12/07/2022
+		printDaysDiff("Lab1", "Today");
+		printDaysDiff("Lab2", "Today");
+		printDaysDiff("Lab3", "Today");
+		printDaysDiff("Lab4", "Today");
 	}
 
-	public static void printLab(String title, int month, int day) {
-		final LocalDateTime dueDate = LocalDateTime.of(2022, month, day, 15, 30); // month/day/2022 at 3:30pm
-		final LocalDateTime now = LocalDateTime.now();
-		final String date = dueDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy 'at' h:mma"));
-		if (now.isAfter(dueDate)) {
-			System.out.printf("%s (%s): Pass Due\n", title, date);
-		} else {
-			long seconds = now.until(dueDate, ChronoUnit.SECONDS) % 60;
-			long minutes = now.until(dueDate, ChronoUnit.MINUTES) % 60;
-			long hours = now.until(dueDate, ChronoUnit.HOURS) % 24;
-			long days = now.until(dueDate, ChronoUnit.DAYS);
-			System.out.printf("%s (%s): %d Days %d Hours %d Minutes %d Seconds Remaining\n", title, date, days, hours, minutes, seconds);
+	public static void printDaysDiff(String date1, String date2) {
+		LocalDate localdate1 = getDate(date1);
+		LocalDate localdate2 = getDate(date2);
+		if (localdate1 == null || localdate2 == null) {
+			return;
 		}
+
+		int difference = difference(localdate1, localdate2);
+		String localdate1f = formatDate(localdate1);
+		String localdate2f = formatDate(localdate2);
+		if (difference < 0) { // Date1 is pass Date2, so it's difference is negative
+			difference *= -1;
+			System.out.printf("%s(%s) is %d days between %s(%s)\n",
+				date1, localdate1f, difference, date2, localdate2f
+			);
+		} else { // Difference is positive, therefore Date2 is pass Date1
+			System.out.printf("%s(%s) is %d days pass %s(%s)\n",
+				date1, localdate1f, difference, date2, localdate2f
+			);
+		}
+	}
+
+	// If the string given is a lab, quiz, or final, then it will return a predetermine date
+	public static LocalDate getDate(String str) {
+		switch (str.toLowerCase()) {
+			case "today": return LocalDate.now();
+			case "lab1": return LocalDate.of(2022, 9, 28);
+			case "lab2": return LocalDate.of(2022, 10, 26);
+			case "lab3": return LocalDate.of(2022, 11, 23);
+			case "lab4": return LocalDate.of(2022, 12, 7);
+			case "quiz1": return LocalDate.of(2022, 9, 14);
+			case "quiz2": return LocalDate.of(2022, 9, 28);
+			case "quiz4": return LocalDate.of(2022, 11, 16);
+			case "final": return LocalDate.of(2022, 12, 9);
+			default:
+				return null;
+		}
+	}
+
+	// Returns the difference in dayd of two given LocalDate object
+	public static int difference(LocalDate date1, LocalDate date2) {
+		return (int) date1.until(date2, ChronoUnit.DAYS);
+	}
+
+	// Given a LocalDate object, returns a string in MM/dd/yyyy format
+	public static String formatDate(LocalDate date) {
+		return date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
 	}
 }
