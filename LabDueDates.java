@@ -8,17 +8,8 @@ import java.util.regex.Pattern;
 public class LabDueDates {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); // Scanner object such that we can read input
-		String compare = null; // Date to be compared
-		while (input.hasNext()) { // Loop unti there is no more input to read
-			final String line = input.next(); // Reads the next string
-
-			// If there is nothing to compare, let this be compared
-			if (compare == null) { 
-				compare = line;
-			} else {
-				printDaysDiff(compare, line);
-				compare = null;
-			}
+		while (input.hasNext()) { // Loop until there is no more input to read
+			printDaysDiff(input.next(), input.next());
 		}
 		input.close();
 	}
@@ -31,13 +22,9 @@ public class LabDueDates {
 			int difference = difference(localdate1, localdate2);
 			if (difference < 0) { // Date1 is pass Date2, so it's difference is negative
 				difference *= -1;
-				System.out.printf("%s is %d days after %s\n",
-					date1, difference, date2
-				);
+				System.out.printf("%s is %d days after %s\n", date1, difference, date2);
 			} else { // Difference is positive, therefore Date2 is pass Date1
-				System.out.printf("%s is %d days behind %s\n",
-					date1, difference, date2
-				);
+				System.out.printf("%s is %d days behind %s\n", date1, difference, date2);
 			}
 		} catch (DateTimeException e) { // Something went wrong tring to convert the string to a LocalDate object
 			System.err.println(e.getMessage());
